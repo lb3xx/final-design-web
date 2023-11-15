@@ -1,7 +1,40 @@
 <template>
-  <h1 style="margin: auto">欢迎来到基于springboot的购票核销强实名认证系统</h1>
+  <Header></Header>
+  <div class="container">
+    <Left></Left>
+    <Right></Right>
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from 'vue'
+import Header from '@/components/Header.vue'
+import Left from '@/components/Left.vue'
+import Right from '@/components/Right.vue'
+import { login, register, uploadlist, showlist, showTicket, book } from '@/api'
 
-<style lang="scss" scoped></style>
+onMounted(async () => {
+  const res1 = login()
+  const res2 = register({
+    password: '12345',
+    phoneNumber: '13111112222',
+    idNumber: '340826198809199876'
+  })
+  const res3 = uploadlist()
+  const res4 = showlist()
+  const res5 = showTicket()
+  console.log(res1)
+  console.log(res2)
+  console.log(res3)
+  console.log(res4)
+  console.log(res5)
+})
+</script>
+
+<style lang="scss" scoped>
+.container {
+  display: flex;
+  width: 100%;
+  height: calc(100% - 100px);
+}
+</style>
