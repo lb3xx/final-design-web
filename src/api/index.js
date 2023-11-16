@@ -42,14 +42,14 @@ export const book = params =>
   })
 
 export const showCheckList = () =>
-    axios({
-        url:`/api/showCheckList`,
-        method: 'get'
-    })
+  axios({
+    url: `/api/showCheckList`,
+    method: 'get'
+  })
 
 export const check = params =>
-    axios({
-        url:`/api/check`,
-        method:'get',
-        params
-    })
+  axios({
+    url: `/api/check`,
+    method: 'get',
+    params
+  })

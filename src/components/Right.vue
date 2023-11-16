@@ -1,12 +1,10 @@
 <template>
   <div class="right">
     <router-view></router-view>
-
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .right {

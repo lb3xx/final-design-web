@@ -24,6 +24,7 @@ const tableData = [
 </script>
 
 <template>
+  <h1>检票模块</h1>
   <el-table :data="tableData" style="width: 100%">
     <el-table-column prop="date" label="Date" width="180" />
     <el-table-column prop="name" label="Name" width="180" />
@@ -33,6 +34,4 @@ const tableData = [
   <el-pagination background layout="prev, pager, next" :total="1000" />
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

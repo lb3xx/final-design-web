@@ -17,19 +17,37 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
+import { login, register } from '@/api'
 const router = useRouter()
 const dialogVisible = ref(false)
 const user = ref({
   account: '',
   pwd: ''
 })
-const register = () => {
+const registerUser = async () => {
   ElMessage({
-    message: `账号 : admin  密码 : 123456`,
+    message: `账号 : 13111112222  密码 : 12345`,
     type: 'warning'
   })
 }
-const login = () => {
+const loginUser = async () => {
+  // const { data: res } = await login({
+  //   phoneNumber: user.value.account,
+  //   password: user.value.pwd
+  // })
+  // if (res.code == 1) {
+  //   localStorage.setItem('token', res.object.token)
+  //   ElMessage({
+  //     message: '登录成功!',
+  //     type: 'success'
+  //   })
+  //   dialogVisible.value = false
+  //   router.push('/main')
+  // } else {
+  //   ElMessage.error('账号或者密码错误!')
+  // }
+
+
   if (user.value.account === 'admin' && user.value.pwd === '123456') {
     ElMessage({
       message: '登录成功!',
@@ -54,8 +72,8 @@ const throttle = (fn, time = 500) => {
     }, time)
   }
 }
-const handleRegister = throttle(register, 2000)
-const handleLogin = throttle(login, 2000)
+const handleRegister = throttle(registerUser, 2000)
+const handleLogin = throttle(loginUser, 2000)
 
 onMounted(() => {
   dialogVisible.value = true
