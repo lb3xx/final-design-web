@@ -13,6 +13,8 @@ import Left from '@/components/Left.vue'
 import Right from '@/components/Right.vue'
 import { login, register, uploadlist, showlist, showTicket, book } from '@/api'
 
+
+
 onMounted(async () => {
   const res1 = login()
   const res2 = register({
