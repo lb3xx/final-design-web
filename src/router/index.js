@@ -9,7 +9,25 @@ const routes = [
   {
     path: '/main',
     name: 'main',
-    component: () => import('../views/Main.vue')
+    component: () => import('../views/Main.vue'),
+    children:[
+      {
+        path: '/',
+        component: () => import('../views/Main.vue'),
+      },
+      {
+        path: '/master',
+        component: () => import('../components/MasterTable.vue'),
+      },
+      {
+        path: '/book',
+        component: () => import('../views/Main.vue'),
+      },
+      {
+        path: '/check',
+        component: () => import('../views/Main.vue'),
+      }
+    ]
   }
 ]
 

@@ -18,7 +18,7 @@ module.exports = defineConfig({
     proxy: {
       // https://fssj.fsamr.foshan.gov.cn/fssjscjg-gzh-api/voip/wxjssdkSignature
       '/api': {
-        target: 'http://222.200.99.167:8080',
+        target: 'http://localhost:8080',
         ws: true,
         changeOrigin: true,
         pathRewrite: {

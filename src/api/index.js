@@ -1,9 +1,10 @@
 import axios from './axios.js'
 
-export const login = () =>
+export const login = data =>
   axios({
     url: `/api/login`,
-    method: 'get'
+    method: 'post',
+    data
   })
 
 export const register = data =>
@@ -26,15 +27,29 @@ export const showlist = () =>
     method: 'get'
   })
 
-export const showTicket = () =>
+export const showTicket = params =>
   axios({
     url: `/api/tic/showTicket`,
-    method: 'get'
+    method: 'get',
+    params
   })
 
-export const book = data =>
+export const book = params =>
   axios({
     url: `/api/book`,
     method: 'post',
-    data
+    params
   })
+
+export const showCheckList = () =>
+    axios({
+        url:`/api/showCheckList`,
+        method: 'get'
+    })
+
+export const check = params =>
+    axios({
+        url:`/api/check`,
+        method:'get',
+        params
+    })
