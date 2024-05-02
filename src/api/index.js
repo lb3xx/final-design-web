@@ -34,11 +34,11 @@ export const showTicket = params =>
     params
   })
 
-export const book = params =>
+export const book = data =>
   axios({
     url: `/api/book`,
     method: 'post',
-    params
+    data
   })
 
 export const showCheckList = () =>
@@ -47,9 +47,37 @@ export const showCheckList = () =>
     method: 'get'
   })
 
-export const check = params =>
+export const check = data =>
   axios({
     url: `/api/check`,
+    method: 'post',
+    data
+  })
+
+export const updatePerformanceList = data =>
+  axios({
+    url: `/api/per/updatelist`,
+    method: 'post',
+    data
+  })
+
+  export const deletePer = params =>
+  axios({
+    url: `/api/per/deleteperformance`,
+    method: 'get',
+    params
+  })
+
+  export const deleteTicketById = data =>
+  axios({
+    url: `/api/delete`,
+    method: 'post',
+    data
+  })
+
+  export const search = params =>
+  axios({
+    url: `/api/per/showbykeyword`,
     method: 'get',
     params
   })

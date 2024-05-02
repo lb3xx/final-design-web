@@ -26,8 +26,17 @@ const routes = [
       {
         path: 'check',
         component: () => import('../components/CheckTable.vue')
+      },
+      {
+        path: 'userinfo',
+        component: () => import('../components/UserInfo.vue')
       }
     ]
+  },
+  {
+    path: '/face',
+    name: 'face',
+    component: () => import('../components/FaceTable.vue')
   }
 ]
 
